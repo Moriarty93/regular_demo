@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script type="text/javascript">
+            // 前瞻
+            //     正则表达式从文本头部向尾部开始解析，文本尾部方向，成为'前'
+            //     前瞻就是在正则表达式匹配到规则的时候，向后检查时候符合断言，后顾/后瞻方向相反
+            //     JavaScript不支持后顾
+            //     符合和不符合特定断言称为肯定/正向匹配和否定/负向匹配
+            
+            {
+                let str = 'a2-3d3vv'
+                const reg = /\w\d/g
+                const reg1 = /\w(?=\d)/g   //单词字符，后面是数字
+                const reg2 = /\w(?!\d)/g   //单词字符，后面不是数字
+                console.log(str.replace(reg, 'm'))
+                console.log(str.replace(reg1, 'm'))
+                console.log(str.replace(reg2, 'm'))
+            }
+        </script>
+    </body>
+</html>

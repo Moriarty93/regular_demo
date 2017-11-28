@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script type="text/javascript">
+            // 元字符
+            // 正则表达式有两种基本字符类型组成
+            //     1.原义文本字符     'asda'普通字符
+            //     2.元字符      '\b'单词边界等特殊字符 *+?$^.|(){}[]
+
+
+            // 字符类
+            // 我们可以使用元字符[]来构建一个简单的类
+            // 所谓类是指符合某些特性的对象，一个泛指，而不是特指某个字符
+            // 表达式[abc]把字符a或b或c归为一类，表达式可以匹配这类的字符
+            
+
+            let aa = 'a1b2c3d4'
+            {
+                let reg = /[abcd]/g
+                console.log(aa.replace(reg, '666'))
+            }
+
+            {
+                // 字符类取反
+                // 使用元字符^创建
+                // 方向类的意思是不属于某类的内容
+                // 表达式[^abc]表示不是字符a或b或c的内容
+                
+                let reg = new RegExp('[^abCd]', 'gi')
+                console.log(aa.replace(reg, '0'))
+            }
+
+
+            // 范围类
+            // 我们可以是使用[a-z]来连接两个字符表示从a到z的任意字符
+            // 这是一个闭区间，也就包含a和z本身
+            
+            {
+                let reg = new RegExp('[A-D]', 'gi')
+                let reg1 = /[a-dA-D]/g
+                console.log(aa.replace(reg, 'moriarty'))
+                console.log(aa.replace(reg1, 'moriarty'))
+            }
+
+            {
+                let str = '2016-09-17'
+                let reg = /[\d-]/g
+                console.log(str.replace(reg, '6'))
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script type="text/javascript">
+            // 预定义类
+            // .  ===  [^\r\n]  除了回车符和换行符之外的所有字符
+            // \d  ===  [0-9]  数字字符
+            // \D  ===  [^0-9]  非数字字符
+            // \s  ===  [\t\n\x0b\f\r]  空白字符
+            // \S  ===  [^\t\n\x0b\f\r]  非空白字符 
+            // \w  ===  [a-zA-Z_0-9]  单词字符(字母、数字、下划线)
+            // \W  ===  [^a-zA-Z_0-9]  非单词字符
+            
+
+            // 边界
+            // ^  以xxx开始
+            // $  以xxx结束
+            // \b  单词边界
+            // \B  非单词边界
+            
+            {
+                let str = 'This is a boy'
+                const reg = /is/g
+                const reg1 = /\bis\b/g
+                const reg2 = /\Bis\b/g
+                console.log(str.replace(reg, '6'))
+                console.log(str.replace(reg1, '6'))
+                console.log(str.replace(reg2, '6'))
+            }
+
+            {
+                let str = '@123@abc@'
+                const reg = /@./g 
+                const reg1 = /^@./g
+                const reg2 = /@$/g
+                console.log(str.replace(reg, '-'))
+                console.log(str.replace(reg1, '-'))
+                console.log(str.replace(reg2, '-'))
+            }
+
+            {
+                let str = '@123\n@456\n@789'
+                const reg = /^@\d/g 
+                const reg1 = /^@\d/gm
+                console.log(str.replace(reg, '6'))
+                console.log(str.replace(reg1, '6'))
+            }
+
+
+            // 量词
+            //     ?   出现零次或一次(最多出现一次)
+            //     +   出现一次或多次(至少出现一次)
+            //     *   出现零次或多次(任意次)
+            //     {n}     出现n次
+            //     {n, m}      出现n到m次
+            //     {n,}        至少出现n次  
+        </script>
+    </body>
+</html>

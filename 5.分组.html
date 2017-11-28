@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script type="text/javascript">
+            {
+                // 分组
+                //     使用()可以达到分组的功能，使量词作用于分组
+                
+
+                let str = 'a1b2c3d4'
+                const reg = /([a-z]\d){3}/g
+                console.log(str.replace(reg, 'hhh'))
+            }
+
+
+            {
+                // 或 |
+                
+                let str = 'Moriarty666'
+                let str1 = 'mMrr11mmdd11'
+                const reg = /moriarty|666/gi
+                const reg1 =  /mm(rr|dd)11/gi
+                console.log(str.replace(reg, 'h'))
+                console.log(str1.replace(reg1, 'x'))
+            }
+
+            {
+                // 方向引用  $1 $2 ....
+                // 忽略分组  ?:
+                
+                let str = '2015-12-22'
+                const reg = /(\d{4})-(\d{2})-(\d{2})/g
+                const reg1 = /(?:\d{4})-(\d{2})-(\d{2})/g
+                console.log(str.replace(reg, '$2/$3/$1'))
+                console.log(str.replace(reg1, '$2/$1'))
+
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script type="text/javascript">
+                {
+                    // 默认贪婪模式，尽可能多的匹配
+                    let str = '12345678'
+                    const reg = /\d{3,6}/g
+                    console.log(str.replace(reg, 'a'))
+                }
+
+                {
+                    // 非贪婪
+                    let str = '12345678'
+                    const reg = /\d{3,6}?/g
+                    console.log(str.replace(reg, 'a'))
+                }
+        </script>
+    </body>
+</html>

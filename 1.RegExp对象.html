@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script type="text/javascript">
+            let aa = 'he is a boy, This IS a dog, is aaa'
+            {
+                //字面量
+                
+                let reg = /\bis\b/
+                let reg1 = /\bis\b/g
+                console.log(aa.replace(reg, 'Is'))
+                console.log(aa.replace(reg1, 'Is'))
+
+                // 'g' 代表全局，全部匹配
+            }
+
+            {
+                //构造函数
+                
+                let reg = new RegExp('\\bis\\b')
+                let reg1 = new RegExp('\\bis\\b', 'g')
+                console.log(aa.replace(reg, 'DD'))
+                console.log(aa.replace(reg1, 'DD'))
+            }
+
+            {
+                // 修饰符
+                // g: global 全文搜索，如果不添加，就搜索到第一个匹配停止
+                // i: ignore case  忽略大小写， 默认是大小写敏感
+                // m:  multiple lines  多行搜索
+                
+                let reg = /\bis\b/g
+                let reg1 = /\bis\b/gi
+                console.log(aa.replace(reg, 'AAA'))
+                console.log(aa.replace(reg1, 'AAA'))
+            }
+        </script>
+    </body>
+</html>
