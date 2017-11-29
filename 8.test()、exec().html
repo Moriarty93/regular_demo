@@ -5,7 +5,39 @@
     </head>
     <body>
         <script type="text/javascript">
+            // RegExp.prototype.test(str)
+            //     用于测试字符串参数中是否存在匹配正则表达式模式的字符串
+            //     存在true  
+            //     不存在false
             
+            {
+                const str = '$ab'
+                const reg1 = /\w/
+                const reg2 = /\w/g 
+                console.log(reg1.test(str))
+                console.log(reg2.test(str))
+            }
+
+
+            // RegExp.prototype.exec(str)
+            // 使用正则表达式模式对字符串执行搜索，并将更新全局RegExp对象的属性以反映匹配结果
+            // 如果没有匹配的文本则返回null，否则返回一个结果数组
+            
+            {
+                const str = '717589850@qq.com'
+                const reg = /^[a-z0-9]{2,}@[a-z0-9]{2,}\.com$/gi
+                console.log(reg.test(str))
+            }
+            {
+                let str1 = 'rrrrr111 data-mec-src="asdas|dasd" rrrrr111 data-mec-src="asdas1dasd" rrrrr'
+                const reg1 = /data-mec-src="[^"]+"/g
+                // const reg2 = /data-mce-src="([^"]*)"/g
+                console.log(str1.replace(reg1, '666'))
+                let str2 = str1.replace(reg1, '666')
+                console.log(str2)
+                // console.log(str1.replace(reg2, '666'))
+
+            }
         </script>
     </body>
 </html>
